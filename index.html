@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <script type="application/json" id="data-json">
+[
+  {"name":"Castle-3", "rarity":1, "tag":["前衛", "近距離", "男性", "支援", "ロボット"]},
+  {"name":"Lancet-2", "rarity":1, "tag":["医療", "遠距離", "女性", "治療", "ロボット"]},
+  {"name":"12F", "rarity":2, "tag":["術士", "遠距離", "男性", "初期"]},
+  {"name":"ドゥリン", "rarity":2, "tag":["術士", "遠距離", "女性", "初期"]},
+  {"name":"ノイルホーン", "rarity":2, "tag":["重装", "近距離", "男性", "初期"]},
+  {"name":"ヤトウ", "rarity":2, "tag":["先鋒", "近距離", "女性", "初期"]},
+  {"name":"レンジャー", "rarity":2, "tag":["狙撃", "遠距離", "男性", "初期"]},
+  {"name":"アドナキエル", "rarity":3, "tag":["狙撃", "遠距離", "男性", "火力"]},
+  {"name":"アンセル", "rarity":3, "tag":["医療", "遠距離", "男性", "治療"]},
+  {"name":"オーキッド", "rarity":3, "tag":["補助", "遠距離", "女性", "減速"]},
+  {"name":"クルース", "rarity":3, "tag":["狙撃", "遠距離", "女性", "火力"]},
+  {"name":"スチュワード", "rarity":3, "tag":["術士", "遠距離", "男性", "火力"]},
+  {"name":"ハイビスカス", "rarity":3, "tag":["医療", "遠距離", "女性", "治療"]},
+  {"name":"ビーグル", "rarity":3, "tag":["重装", "近距離", "女性", "防御"]},
+  {"name":"フェン", "rarity":3, "tag":["先鋒", "近距離", "女性", "COST回復"]},
+  {"name":"プリュム", "rarity":3, "tag":["先鋒", "近距離", "女性", "火力", "COST回復"]},
+  {"name":"メランサ", "rarity":3, "tag":["前衛", "近距離", "女性", "火力", "生存"]},
+  {"name":"ラヴァ", "rarity":3, "tag":["術士", "遠距離", "女性", "範囲攻撃"]},
+  {"name":"ヴァニラ", "rarity":3, "tag":["先鋒", "近距離", "女性", "COST回復"]},
+  {"name":"アーススピリット", "rarity":4, "tag":["補助", "遠距離", "女性", "減速"]},
+  {"name":"エステル", "rarity":4, "tag":["前衛", "近距離", "女性", "範囲攻撃", "生存"]},
+  {"name":"ギターノ", "rarity":4, "tag":["術士", "遠距離", "女性", "範囲攻撃"]},
+  {"name":"クオーラ", "rarity":4, "tag":["重装", "近距離", "女性", "防御"]},
+  {"name":"グム", "rarity":4, "tag":["重装", "近距離", "女性", "防御", "治療"]},
+  {"name":"グラベル", "rarity":4, "tag":["特殊", "近距離", "女性", "高速再配置", "防御"]},
+  {"name":"ショウ", "rarity":4, "tag":["特殊", "近距離", "女性", "強制移動"]},
+  {"name":"シラユキ", "rarity":4, "tag":["狙撃", "遠距離", "女性", "範囲攻撃", "減速"]},
+  {"name":"ジェシカ", "rarity":4, "tag":["狙撃", "遠距離", "女性", "火力", "生存"]},
+  {"name":"スカベンジャー", "rarity":4, "tag":["先鋒", "近距離", "女性", "COST回復", "火力"]},
+  {"name":"ドーベルマン", "rarity":4, "tag":["前衛", "近距離", "女性", "火力", "支援"]},
+  {"name":"パフューマー", "rarity":4, "tag":["医療", "遠距離", "女性", "治療"]},
+  {"name":"フロストリーフ", "rarity":4, "tag":["前衛", "近距離", "女性", "減速", "火力"]},
+  {"name":"ヘイズ", "rarity":4, "tag":["術士", "遠距離", "女性", "火力", "弱化"]},
+  {"name":"マッターホルン", "rarity":4, "tag":["重装", "近距離", "男性", "防御"]},
+  {"name":"マトイマル", "rarity":4, "tag":["前衛", "近距離", "女性", "生存", "火力"]},
+  {"name":"ミルラ", "rarity":4, "tag":["医療", "遠距離", "女性", "治療"]},
+  {"name":"ムース", "rarity":4, "tag":["前衛", "近距離", "女性", "火力"]},
+  {"name":"メテオ", "rarity":4, "tag":["狙撃", "遠距離", "女性", "火力", "弱化"]},
+  {"name":"ロープ", "rarity":4, "tag":["特殊", "近距離", "女性", "強制移動"]},
+  {"name":"ヴィグナ", "rarity":4, "tag":["先鋒", "近距離", "女性", "火力", "COST回復"]},
+  {"name":"アズリウス", "rarity":5, "tag":["狙撃", "遠距離", "女性", "火力", "エリート"]},
+  {"name":"インドラ", "rarity":5, "tag":["前衛", "近距離", "女性", "火力", "生存", "エリート"]},
+  {"name":"イースチナ", "rarity":5, "tag":["補助", "遠距離", "女性", "減速", "火力", "エリート"]},
+  {"name":"エフイーター", "rarity":5, "tag":["特殊", "近距離", "女性", "強制移動", "減速", "エリート"]},
+  {"name":"クリフハート", "rarity":5, "tag":["特殊", "近距離", "女性", "強制移動", "火力", "エリート"]},
+  {"name":"クロワッサン", "rarity":5, "tag":["重装", "近距離", "女性", "防御", "強制移動", "エリート"]},
+  {"name":"サイレンス", "rarity":5, "tag":["医療", "遠距離", "女性", "治療", "エリート"]},
+  {"name":"スペクター", "rarity":5, "tag":["前衛", "近距離", "女性", "範囲攻撃", "生存", "エリート"]},
+  {"name":"ズィマー", "rarity":5, "tag":["先鋒", "近距離", "女性", "COST回復", "支援", "エリート"]},
+  {"name":"テキサス", "rarity":5, "tag":["先鋒", "近距離", "女性", "COST回復", "牽制", "エリート"]},
+  {"name":"ニアール", "rarity":5, "tag":["重装", "近距離", "女性", "防御", "治療", "エリート"]},
+  {"name":"ファイヤーウォッチ", "rarity":5, "tag":["狙撃", "遠距離", "女性", "火力", "爆発力", "エリート"]},
+  {"name":"フィリオプシス", "rarity":5, "tag":["医療", "遠距離", "女性", "治療", "支援", "エリート"]},
+  {"name":"プラチナ", "rarity":5, "tag":["狙撃", "遠距離", "女性", "火力", "エリート"]},
+  {"name":"プラマニクス", "rarity":5, "tag":["補助", "遠距離", "女性", "弱化", "エリート"]},
+  {"name":"プロヴァンス", "rarity":5, "tag":["狙撃", "遠距離", "女性", "火力", "エリート"]},
+  {"name":"マンティコア", "rarity":5, "tag":["特殊", "近距離", "女性", "火力", "生存", "エリート"]},
+  {"name":"メイヤー", "rarity":5, "tag":["補助", "遠距離", "女性", "召喚", "牽制", "エリート"]},
+  {"name":"メテオリーテ", "rarity":5, "tag":["狙撃", "遠距離", "女性", "範囲攻撃", "弱化", "エリート"]},
+  {"name":"リスカム", "rarity":5, "tag":["重装", "近距離", "女性", "防御", "火力", "エリート"]},
+  {"name":"レッド", "rarity":5, "tag":["特殊", "近距離", "女性", "高速再配置", "牽制", "エリート"]},
+  {"name":"ワルファリン", "rarity":5, "tag":["医療", "遠距離", "女性", "治療", "支援", "エリート"]},
+  {"name":"ヴァルカン", "rarity":5, "tag":["重装", "近距離", "女性", "生存", "防御", "火力", "エリート"]},
+  {"name":"イフリータ", "rarity":6, "tag":["術士", "遠距離", "女性", "範囲攻撃", "弱化", "上級エリート"]},
+  {"name":"エクシア", "rarity":6, "tag":["狙撃", "遠距離", "女性", "火力", "上級エリート"]},
+  {"name":"サリア", "rarity":6, "tag":["重装", "近距離", "女性", "防御", "治療", "支援", "上級エリート"]},
+  {"name":"シャイニング", "rarity":6, "tag":["医療", "遠距離", "女性", "治療", "支援", "上級エリート"]},
+  {"name":"シルバーアッシュ", "rarity":6, "tag":["前衛", "近距離", "男性", "火力", "支援", "上級エリート"]},
+  {"name":"シージ", "rarity":6, "tag":["先鋒", "近距離", "女性", "COST回復", "火力", "上級エリート"]},
+  {"name":"ナイチンゲール", "rarity":6, "tag":["医療", "遠距離", "女性", "治療", "支援", "上級エリート"]},
+  {"name":"ホシグマ", "rarity":6, "tag":["重装", "近距離", "女性", "防御", "火力", "上級エリート"]}
+]
+  </script>
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>アークナイツ 公開求人検索</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Serif+JP:900&display=swap&subset=japanese" rel="stylesheet">
+  <style>
+    body {
+      background-color: #313131;
+      margin: 0;
+      padding: 0;
+    }
+
+    #container {
+      font-family: 'Noto Sans JP', sans-serif;
+      max-width: 640px;
+      margin: 10px auto;
+      background-color: white;
+      padding: 10px;
+    }
+
+    .title {
+      position: relative;
+      padding: 15px;
+      color: #313131;
+      font-family: 'Noto Serif JP', serif;
+      font-weight: black;
+      font-size: xx-large;
+      text-align: center;
+      background: repeating-linear-gradient(-45deg, #E8E8E8, #E8E8E8 10px, #FFF 0, #FFF 20px);
+      border-bottom: #C65544 solid 3px;
+      border-top: white solid 3px;
+    }
+
+    .title:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 33%;
+      height: inherit;
+      border-bottom: 3px solid #ffffff;
+    }
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    input+span,
+    .button,
+    .tag {
+      margin: 4px;
+      display: inline-block;
+      font-size: small;
+      width: 100px;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      ;
+      text-align: center;
+      box-shadow: 0px 2px 1px 2px;
+      color: #E8E8E8;
+      background-color: #313131;
+    }
+
+    input:checked+span,
+    .button:active {
+      background-color: #1598DD;
+    }
+
+    .tag {
+      box-shadow: none;
+    }
+
+    .button {
+      cursor: default;
+    }
+
+    #tag-form div {
+      margin: 0.5rem auto;
+    }
+
+    .result {
+      margin: 8px 0px;
+      padding: 0px 8px;
+      background-color: #E8E8E8;
+    }
+
+    .rarity6 {
+      background-color: goldenrod;
+    }
+
+    .rarity5 {
+      background-color: palegoldenrod;
+    }
+
+    .rarity4 {
+      background-color: lightblue;
+    }
+
+    .note {
+      color: #C65544
+    }
+
+    .character {
+      display: inline-block;
+      margin: auto 6px
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const DATA_LIST = JSON.parse(document.querySelector('#data-json').innerText)
+
+    const getSelectedTags = () => {
+      const elems = document.querySelectorAll("#tag-form :checked")
+      return [...elems].map(elem => elem.value)
+    }
+
+    const combineTags = (tagList) => {
+      const res = []
+      // nが大きい方から小さい方に並べたい
+      for (let i = tagList.length; 1 <= i; i--) {
+        res.push(...combination(tagList, i))
+      }
+      return res
+    }
+
+    const searchCharacter = (tagList) => {
+      if (tagList.length == 0) { return [] }
+
+      return DATA_LIST.filter(data =>
+        tagList.every(tag => data.tag.includes(tag))
+      )
+    }
+
+    // https://tech-blog.s-yoshiki.com/2019/06/1342/
+    const combination = (nums, k) => {
+      let ans = [];
+      if (nums.length < k) {
+        return []
+      }
+      if (k === 1) {
+        for (let i = 0; i < nums.length; i++) {
+          ans[i] = [nums[i]];
+        }
+      } else {
+        for (let i = 0; i < nums.length - k + 1; i++) {
+          let row = combination(nums.slice(i + 1), k - 1);
+          for (let j = 0; j < row.length; j++) {
+            ans.push([nums[i]].concat(row[j]));
+          }
+        }
+      }
+      return ans;
+    }
+
+    const printResult = (tagList, charList) => {
+      console.log('pr', tagList, charList)
+
+      const root = document.createElement('div')
+      root.classList.add('result')
+
+      const eTags = document.createElement('div')
+      eTags.classList.add('tags')
+      tagList.forEach((tag) => {
+        const e = document.createElement('div')
+        e.classList.add('tag')
+        e.textContent = tag
+        eTags.appendChild(e)
+      })
+
+      const eChars = document.createElement('div')
+      eChars.classList.add('characters')
+      charList.sort((a, b) => b.rarity - a.rarity).forEach((char) => {
+        const e = document.createElement('div')
+        e.classList.add('character')
+        e.textContent = `★${char.rarity} ${char.name}`
+        eChars.appendChild(e)
+      })
+
+      root.appendChild(eTags)
+
+      const minRarity = Math.min(...charList.map(c => c.rarity))
+      root.classList.add(`rarity${minRarity}`)
+      if (minRarity >= 4) {
+        const e = document.createElement('div')
+        e.classList.add('note')
+        e.textContent = `[★${minRarity}以上確定！]`
+        root.appendChild(e)
+      }
+
+      root.appendChild(eChars)
+
+      document.querySelector('#output').appendChild(root)
+    }
+
+    const clearOutput = () => {
+      document.querySelector('#output').textContent = null
+    }
+
+    const clearForm = () => {
+      document.querySelector('#tag-form').reset()
+      clearOutput()
+    }
+
+    const main = () => {
+      clearOutput()
+
+      combineTags(getSelectedTags()).forEach((tagList) => {
+        const charList = searchCharacter(tagList)
+        if (charList.length > 0) {
+          printResult(tagList, charList)
+        }
+      })
+    }
+  </script>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="title">アークナイツ 公開求人検索</div>
+
+      <form id="tag-form" onchange="main()">
+        <div>
+          <span class="button" onclick="clearForm()" style="font-weight: bold;">×</span>
+        </div>
+        <div>
+          <label><input type="checkbox" value="先鋒タイプ"><span>先鋒タイプ</span></label>
+          <label><input type="checkbox" value="前衛タイプ"><span>前衛タイプ</span></label>
+          <label><input type="checkbox" value="狙撃タイプ"><span>狙撃タイプ</span></label>
+          <label><input type="checkbox" value="重装タイプ"><span>重装タイプ</span></label>
+          <label><input type="checkbox" value="医療タイプ"><span>医療タイプ</span></label>
+          <label><input type="checkbox" value="補助タイプ"><span>補助タイプ</span></label>
+          <label><input type="checkbox" value="術士タイプ"><span>術士タイプ</span></label>
+          <label><input type="checkbox" value="特殊タイプ"><span>特殊タイプ</span></label>
+        </div>
+        <div>
+          <label><input type="checkbox" value="近距離"><span>近距離</span></label>
+          <label><input type="checkbox" value="遠距離"><span>遠距離</span></label>
+        </div>
+        <div>
+          <label><input type="checkbox" value="男性"><span>男性</span></label>
+          <label><input type="checkbox" value="女性"><span>女性</span></label>
+        </div>
+        <div>
+          <label><input type="checkbox" value="初期"><span>初期</span></label>
+          <label><input type="checkbox" value="エリート"><span>エリート</span></label>
+          <label><input type="checkbox" value="上級エリート"><span>上級エリート</span></label>
+        </div>
+        <div>
+          <label><input type="checkbox" value="治療"><span>治療</span></label>
+          <label><input type="checkbox" value="支援"><span>支援</span></label>
+          <label><input type="checkbox" value="火力"><span>火力</span></label>
+          <label><input type="checkbox" value="範囲攻撃"><span>範囲攻撃</span></label>
+          <label><input type="checkbox" value="減速"><span>減速</span></label>
+          <label><input type="checkbox" value="生存"><span>生存</span></label>
+          <label><input type="checkbox" value="防御"><span>防御</span></label>
+          <label><input type="checkbox" value="弱化"><span>弱化</span></label>
+          <label><input type="checkbox" value="強制移動"><span>強制移動</span></label>
+          <label><input type="checkbox" value="牽制"><span>牽制</span></label>
+          <label><input type="checkbox" value="爆発力"><span>爆発力</span></label>
+          <label><input type="checkbox" value="召喚"><span>召喚</span></label>
+          <label><input type="checkbox" value="高速再配置"><span>高速再配置</span></label>
+          <label><input type="checkbox" value="COST回復"><span>COST回復</span></label>
+          <label><input type="checkbox" value="ロボット"><span>ロボット</span></label>
+        </div>
+      </form>
+
+      <div id="output"></div>
+    </div>
+  </body>
+</html>
