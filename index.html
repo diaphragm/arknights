@@ -81,7 +81,8 @@
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>アークナイツ 公開求人検索</title>
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Serif+JP:900&display=swap&subset=japanese" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Serif+JP:900&display=swap&subset=japanese"
+    rel="stylesheet">
   <style>
     body {
       background-color: #313131;
@@ -121,7 +122,7 @@
     }
 
     /* いい感じの区切りで文を改行するように */
-    .title span{
+    .title span {
       display: inline-block;
     }
 
@@ -187,6 +188,13 @@
     .character {
       display: inline-block;
       margin: auto 6px
+    }
+
+    #noinfo {
+      text-align: center;
+      color: #AAAAAA;
+      border: solid 1.5px #AAAAAA;
+      padding: 8px;
     }
   </style>
 </head>
@@ -278,6 +286,7 @@
 
     const clearOutput = () => {
       document.querySelector('#output').textContent = null
+      document.querySelector('#noinfo').style.display = 'inherit'
     }
 
     const clearForm = () => {
@@ -291,6 +300,7 @@
       combineTags(getSelectedTags()).forEach((tagList) => {
         const charList = searchCharacter(tagList)
         if (charList.length > 0) {
+          document.querySelector('#noinfo').style.display = 'none'
           printResult(tagList, charList)
         }
       })
@@ -349,6 +359,7 @@
       </form>
 
       <div id="output"></div>
+      <div id="noinfo">NO INFO/</div>
     </div>
   </body>
 
