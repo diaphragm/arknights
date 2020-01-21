@@ -220,9 +220,12 @@
     const searchCharacter = (tagList) => {
       if (tagList.length == 0) { return [] }
 
-      return DATA_LIST.filter(data =>
-        tagList.every(tag => data.tag.includes(tag))
-      )
+      return DATA_LIST.filter((data) => {
+        // 上級エリートタグ無しの場合は★6を除外
+        if( data.rarity == 6 && !tagList.includes('上級エリート') ) { return false }
+
+        return tagList.every(tag => data.tag.includes(tag))
+      })
     }
 
     // https://tech-blog.s-yoshiki.com/2019/06/1342/
