@@ -115,13 +115,15 @@
           </div>
         </div>
 
+        <template v-if="handbook.charwordList.length > 0">
         <h2>Voices</h2>
-        <div class="character">
-        <div v-for="charword in handbook.charwordList" class="voice">
-            <div class="voice-title">{{ charword.voiceTitle }}</div>
-            <div class="voice=text">{{ charword.voiceText }}</div>
+          <div class="character">
+          <div v-for="charword in handbook.charwordList" class="voice">
+              <div class="voice-title">{{ charword.voiceTitle }}</div>
+              <div class="voice=text">{{ charword.voiceText }}</div>
+            </div>
           </div>
-        </div>
+        </template>
       </template>
     </template>
     <template v-else>
@@ -170,7 +172,7 @@
 
         this.indexData = Object.keys(this.handbookData)
 
-        const hash = window.location.hash
+        const hash = window.location.hash.slice(1)
         if( this.indexData.includes(hash) ) {
           this.selectedId = hash
         }
