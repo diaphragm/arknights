@@ -70,15 +70,15 @@
       font-weight: bold;
       color: #404040;
     }
-    .story {
-      margin: 10px auto;
+    .story, .voice {
+      margin: 20px auto;
     }
-    .story-title {
+    .story-title, .voice-title {
       background-color: #404040;
       color: white;
       margin: 5px auto;
     }
-    .story-text {
+    .story-text, .voice-text {
       white-space: pre-wrap;
     }
 
@@ -94,23 +94,35 @@
 <body>
   <div id="app">
     <div class="title"><span>アークナイツ</span> <span>データビュワー</span></div>
-    <template v-if="storyDataList">
+    <template v-if="indexData">
       <h2>Index</h2>
       <div class="index">
-        <span v-for="storyData in storyDataList" class="index-item">
-          <a :href="`#${storyData.charID}`">{{ storyData.charData.name }}</a>
+        <span v-for="charId in indexData" class="index-item">
+          <a :href="`#${charId}`" @click="select(charId)">{{ characterData[charId].name }}</a>
         </span>
       </div>
 
-      <h2>Stories</h2>
-      <div v-for="storyData in storyDataList" class="character">
-        <div :id="storyData.charID" class="name">{{ storyData.charData.name }} / {{ storyData.charData.appellation }}</div>
-        <div v-for="data in storyData.storyTextAudio" class="story">
-          <div class="story-title">{{ data.storyTitle }}</div>
-          <div v-for="story in data.stories" class="story-text">{{ story.storyText }}</div>
+      <template v-if="selectedId">
+        <h2>Stories</h2>
+        <div class="character">
+          <div :id="handbook.charID" class="name">
+            {{ handbook.charData.name }} / {{ handbook.charData.appellation }}
+          </div>
+
+          <div v-for="data in handbook.storyList" class="story">
+            <div class="story-title">{{ data.storyTitle }}</div>
+            <div v-for="story in data.stories" class="story-text">{{ story.storyText }}</div>
           </div>
         </div>
-      </div>
+
+        <h2>Voices</h2>
+        <div class="character">
+        <div v-for="charword in handbook.charwordList" class="voice">
+            <div class="voice-title">{{ charword.voiceTitle }}</div>
+            <div class="voice=text">{{ charword.voiceText }}</div>
+          </div>
+        </div>
+      </template>
     </template>
     <template v-else>
       <div class="loading">◇ Loading...</div>
@@ -120,32 +132,54 @@
   <script>
     const URL_HANDOOK_INFO = 'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/ja_JP/gamedata/excel/handbook_info_table.json'
     const URL_CHARACTER_TABLE = 'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/ja_JP/gamedata/excel/character_table.json'
+    const URL_CHARWORD_TABLE = 'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/ja_JP/gamedata/excel/charword_table.json'
+
 
     const app = new Vue({
       el: '#app',
       data: {
-        handbookInfoTable: null,
-        characterTable: null,
-        storyDataList: null
+        charwordTable: null,
+
+        handbookData: null,
+        characterData: null,
+        indexData: null,
+        selectedId: null
+      },
+      computed: {
+        handbook: function() {
+          const charId = this.selectedId
+          const charData = this.characterData[charId]
+          const storyList = this.handbookData[charId].storyTextAudio
+          const charwordList = Object.values(this.charwordTable).filter(o => o.charId === charId)
+
+          return { charId: charId, charData: charData, storyList: storyList, charwordList: charwordList }
+        }
       },
       created: async function () {
         const promiseHandbook = fetch(URL_HANDOOK_INFO)
         const promiseCharacter = fetch(URL_CHARACTER_TABLE)
+        const promiseCharword = fetch(URL_CHARWORD_TABLE)
 
-        this.handbookInfoTable = await (await promiseHandbook).json()
-        this.characterTable = await (await promiseCharacter).json()
+        const handbookInfoTable = await (await promiseHandbook).json()
+        const characterTable = await (await promiseCharacter).json()
+        const charwordTable = await (await promiseCharword).json()
 
-        this.storyDataList = Object.values(this.handbookInfoTable.handbookDict).map((data) => {
-          if( data.charID.match(/^char_/)) {
-            const charData = this.characterTable[data.charID]
-            const storyTextAudio = data.storyTextAudio
-            return { charID: data.charID, charData: charData, storyTextAudio: storyTextAudio }
-          } else if ( data.charID.match(/^npc_/)) {
-            const charData = this.handbookInfoTable.npcDict[data.charID]
-            const storyTextAudio = data.storyTextAudio
-            return { charID: data.charID, charData: charData, storyTextAudio: storyTextAudio }
-          }
-        })
+        this.handbookData = handbookInfoTable.handbookDict
+        this.characterData = Object.assign({}, characterTable, handbookInfoTable.npcDict)
+        this.charwordTable = charwordTable
+
+        this.indexData = Object.keys(this.handbookData)
+
+        const hash = window.location.hash
+        if( this.indexData.includes(hash) ) {
+          this.selectedId = hash
+        }
+
+       },
+       methods: {
+         select: function(charId) {
+           this.selectedId = charId
+         }
        }
     })
   </script>
