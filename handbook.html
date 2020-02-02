@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>アークナイツ データビュワー</title>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap&subset=japanese" rel="stylesheet">
+
+  <style>
+    #app {
+      font-family: 'Noto Sans JP', sans-serif;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .title {
+      position: relative;
+      padding: 15px;
+      color: #313131;
+      font-size: x-large;
+      font-weight: bolder;
+      text-align: center;
+      background: repeating-linear-gradient(-45deg, #E8E8E8, #E8E8E8 10px, #FFF 0, #FFF 20px);
+      border-bottom: #C65544 solid 3px;
+      border-top: white solid 3px;
+      overflow-wrap: break-word;
+    }
+
+    .title:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 33%;
+      height: inherit;
+      border-bottom: 3px solid #ffffff;
+    }
+
+    /* いい感じの区切りで文を改行するように */
+    .title span {
+      display: inline-block;
+    }
+
+    .index {
+      background-color: #f8f8f8;
+      padding: 10px;
+    }
+    .index-item {
+      margin-right: 0.5em;
+    }
+    .index-item a:link {
+      color: #404040;
+    }
+    .index-item a:visited {
+      color: #C65544;
+    }
+
+
+    .character {
+      margin-bottom: 20px;
+      background-color: #f8f8f8;
+      padding: 10px;
+    }
+    .name {
+      font-size: large;
+      font-weight: bold;
+      color: #404040;
+    }
+    .story {
+      margin: 10px auto;
+    }
+    .story-title {
+      background-color: #404040;
+      color: white;
+      margin: 5px auto;
+    }
+    .story-text {
+      white-space: pre-wrap;
+    }
+
+    .loading {
+      margin: 20px auto;
+      text-align: center;
+      font-size: large;
+      font-weight: bold;
+      color: #404040;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="title"><span>アークナイツ</span> <span>データビュワー</span></div>
+    <template v-if="storyDataList">
+      <h2>Index</h2>
+      <div class="index">
+        <span v-for="storyData in storyDataList" class="index-item">
+          <a :href="`#${storyData.charID}`">{{ storyData.charData.name }}</a>
+        </span>
+      </div>
+
+      <h2>Stories</h2>
+      <div v-for="storyData in storyDataList" class="character">
+        <div :id="storyData.charID" class="name">{{ storyData.charData.name }} / {{ storyData.charData.appellation }}</div>
+        <div v-for="data in storyData.storyTextAudio" class="story">
+          <div class="story-title">{{ data.storyTitle }}</div>
+          <div v-for="story in data.stories" class="story-text">{{ story.storyText }}</div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template v-else>
+      <div class="loading">◇ Loading...</div>
+    </template>
+  </div>
+
+  <script>
+    const URL_HANDOOK_INFO = 'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/ja_JP/gamedata/excel/handbook_info_table.json'
+    const URL_CHARACTER_TABLE = 'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/ja_JP/gamedata/excel/character_table.json'
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+        handbookInfoTable: null,
+        characte  rTable: null,
+        storyDataList: null
+      },
+      created: async function () {
+        const promiseHandbook = fetch(URL_HANDOOK_INFO)
+        const promiseCharacter = fetch(URL_CHARACTER_TABLE)
+
+        this.handbookInfoTable = await (await promiseHandbook).json()
+        this.characterTable = await (await promiseCharacter).json()
+
+        this.storyDataList = Object.values(this.handbookInfoTable.handbookDict).map((data) => {
+          if( data.charID.match(/^char_/)) {
+            const charData = this.characterTable[data.charID]
+            const storyTextAudio = data.storyTextAudio
+            return { charID: data.charID, charData: charData, storyTextAudio: storyTextAudio }
+          } else if ( data.charID.match(/^npc_/)) {
+            const charData = this.handbookInfoTable.npcDict[data.charID]
+            const storyTextAudio = data.storyTextAudio
+            return { charID: data.charID, charData: charData, storyTextAudio: storyTextAudio }
+          }
+        })
+       }
+    })
+  </script>
+
+</body>
+</html>
