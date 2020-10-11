@@ -1,0 +1,27 @@
+.title {
+  position: relative;
+  padding: 15px;
+  color: #313131;
+  font-family: 'Noto Serif JP', serif;
+  font-size: xx-large;
+  text-align: center;
+  background: repeating-linear-gradient(-45deg, #E8E8E8, #E8E8E8 10px, #FFF 0, #FFF 20px);
+  border-bottom: #C65544 solid 3px;
+  border-top: white solid 3px;
+  overflow-wrap: break-word;
+}
+
+.title:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 33%;
+  height: inherit;
+  border-bottom: 3px solid #ffffff;
+}
+
+/* いい感じの区切りで文を改行するように */
+.title span {
+  display: inline-block;
+}

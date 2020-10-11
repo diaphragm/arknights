@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './style/App.css'
+import Operators from './data/operators.json'
+import Tags from './data/tags.json'
+import Title from './components/Title'
+import TagList from './components/TagList'
+import Result from './components/Result'
 
-function App() {
+const App = () => {
+  const operators = Operators.operators
+  const tags = Tags.tags
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container">
+      <Title />
+      <TagList tags={tags} />
+      <Result operators={operators} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
