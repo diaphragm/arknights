@@ -38,7 +38,7 @@ const buttonList = [
     { label: '召喚', value: '召喚' },
     { label: '高速再配置', value: '高速再配置' },
     { label: 'COST回復', value: 'COST回復' },
-    { label: 'ロボット', value: 'ロボット' },
+    { label: 'ロボット', value: 'ROBOT' },
   ],
 ]
 
@@ -61,6 +61,7 @@ const fetchCharData = async () => {
     .map(([key, char]) => {
       const tags = char.tagList || []
       tags.push(char.position, char.profession)
+      if (char.rarity + 1 === 1) { tags.push('ROBOT') }
       if (char.rarity + 1 === 5) { tags.push('SENIOR') }
       if (char.rarity + 1 === 6) { tags.push('TOP') }
       return { key, name: char.name, rarity: char.rarity + 1, tags }
