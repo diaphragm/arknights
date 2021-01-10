@@ -1,7 +1,6 @@
 import React from 'react'
-// import '../style/Result.css'
+import 'style/Result.css'
 import ButtonTable from 'data/ButtonTable'
-
 
 const Result = ({result}) => {
   console.log(result)
@@ -16,10 +15,6 @@ const Result = ({result}) => {
         if (chars.length === 0) { return null }
 
         const minRarity = Math.min(...chars.map(char => char.rarity))
-        let note
-        if (minRarity >= 4) {
-          note = <div className="note">[★{minRarity}以上確定！]</div>
-        }
 
         return (
           <div className={`result rarity${minRarity}`} key={i}>
@@ -29,7 +24,7 @@ const Result = ({result}) => {
                 return <div className="tag" key={j}>{label}</div>
               })}
             </div>
-            {note}
+            {minRarity >= 4 && <div className="note">[★{minRarity}以上確定！]</div>}
             <div className="characters">
               {chars.map((char, j) => {
                 return <div className="character" key={j}>★{char.rarity} {char.name}</div>

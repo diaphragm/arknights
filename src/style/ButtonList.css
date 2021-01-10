@@ -1,0 +1,35 @@
+.button-list div {
+  margin: 0.5rem auto;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input+span,
+.button,
+.tag {
+  margin: 4px;
+  display: inline-block;
+  font-size: small;
+  width: 100px;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  box-shadow: 0px 2px 1px 2px;
+  color: #E8E8E8;
+  background-color: #313131;
+}
+
+input:checked+span,
+.button:active {
+  background-color: #1598DD;
+}
+
+.tag {
+  box-shadow: none;
+}
+
+.button {
+  cursor: default;
+}

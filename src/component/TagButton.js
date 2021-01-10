@@ -1,4 +1,5 @@
 import React from 'react'
+import 'style/TagButton.css'
 
 const TagButton = ({ label, value, onChange, isChecked }) => {
   const handleChange = (event) => {
