@@ -1,9 +1,114 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Noto+Serif+JP:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Serif+JP:900&display=swap&subset=japanese');
 
-.container {
+body {
+  background-color: #313131;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
   font-family: 'Noto Sans JP', sans-serif;
   max-width: 640px;
   margin: 10px auto;
   background-color: white;
   padding: 10px;
+}
+
+.title {
+  position: relative;
+  padding: 15px;
+  color: #313131;
+  font-family: 'Noto Serif JP', serif;
+  font-size: xx-large;
+  text-align: center;
+  background: repeating-linear-gradient(-45deg, #E8E8E8, #E8E8E8 10px, #FFF 0, #FFF 20px);
+  border-bottom: #C65544 solid 3px;
+  border-top: white solid 3px;
+  overflow-wrap: break-word;
+}
+
+.title:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 33%;
+  height: inherit;
+  border-bottom: 3px solid #ffffff;
+}
+
+/* いい感じの区切りで文を改行するように */
+.title span {
+  display: inline-block;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input+span,
+.button,
+.tag {
+  margin: 4px;
+  display: inline-block;
+  font-size: small;
+  width: 100px;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  ;
+  text-align: center;
+  box-shadow: 0px 2px 1px 2px;
+  color: #E8E8E8;
+  background-color: #313131;
+}
+
+input:checked+span,
+.button:active {
+  background-color: #1598DD;
+}
+
+.tag {
+  box-shadow: none;
+}
+
+.button {
+  cursor: default;
+}
+
+.button-list div {
+  margin: 0.5rem auto;
+}
+
+.result {
+  margin: 8px 0px;
+  padding: 0px 8px;
+  background-color: #E8E8E8;
+}
+
+.rarity6 {
+  background-color: goldenrod;
+}
+
+.rarity5 {
+  background-color: palegoldenrod;
+}
+
+.rarity4 {
+  background-color: lightblue;
+}
+
+.note {
+  color: #C65544
+}
+
+.character {
+  display: inline-block;
+  margin: auto 6px
+}
+
+#noinfo {
+  text-align: center;
+  color: #AAAAAA;
+  border: solid 1.5px #AAAAAA;
+  padding: 8px;
 }
