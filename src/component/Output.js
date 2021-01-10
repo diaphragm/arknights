@@ -7,7 +7,7 @@ const Output = ({result}) => {
 
   if (result.length > 0) {
     return (
-      <div id="output">
+      <div className="Output">
         {result.map(({ tags, chars }, i) => {
           if (chars.length === 0) { return null }
 
@@ -17,7 +17,7 @@ const Output = ({result}) => {
     )
   } else {
     return (
-      <div id="noinfo">NO INFO/</div>
+      <div className="Output noinfo">NO INFO/</div>
     )
   }
 }

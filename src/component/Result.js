@@ -1,5 +1,6 @@
 import React from 'react'
 import 'style/Result.css'
+import 'style/common/tag.css'
 import ButtonTable from 'data/ButtonTable'
 
 const Result = ({tags, chars}) => {
@@ -10,7 +11,7 @@ const Result = ({tags, chars}) => {
   const minRarity = Math.min(...chars.map(char => char.rarity))
 
   return (
-    <div className={`result rarity${minRarity}`}>
+    <div className={`Result rarity${minRarity}`}>
       <div className="tags">
         {tags.map((tag, j) => {
           const label = lookupButtonLabel(tag).label

@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Serif+JP:900&display=swap&subset=japanese');
 
-body {
-  background-color: #313131;
-  margin: 0;
-  padding: 0;
-}
-
-#container {
+.App {
   font-family: 'Noto Sans JP', sans-serif;
   max-width: 640px;
   margin: 10px auto;

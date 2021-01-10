@@ -3,7 +3,7 @@ import '../style/Title.css'
 
 const Title = () => {
   return (
-    <div className="title"><span>アークナイツ</span> <span>公開求人検索</span></div>
+    <div className="Title"><span>アークナイツ</span> <span>公開求人検索</span></div>
   )
 }
 

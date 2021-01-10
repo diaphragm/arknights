@@ -4,32 +4,32 @@ import TagButton from 'component/TagButton'
 import ClearButton from 'component/ClearButton'
 import ButtonTable from 'data/ButtonTable'
 
-const ButtonList = ({checkedList, onChange}) => {
+const ButtonList = ({list, onChange}) => {
   const onClear = () => {
     onChange([])
   }
 
   const onChecked = ({ value, checked }) => {
     if (checked) {
-      if (!checkedList.includes(value)) {
-        onChange([...checkedList, value])
+      if (!list.includes(value)) {
+        onChange([...list, value])
       }
     } else {
-      onChange(checkedList.filter(x => x !== value))
+      onChange(list.filter(x => x !== value))
     }
   }
 
   return (
-    <div className="button-list">
+    <div className="ButtonList">
       <div>
         <ClearButton onClick={onClear} />
       </div>
       {ButtonTable.map((group, i) => {
         return (
-          <div key={i}>
+          <div className="group" key={i}>
             {group.map(({ label, value }, i) => {
               return (
-                <TagButton label={label} value={value} onChange={onChecked} isChecked={checkedList.includes(value)} key={i} />
+                <TagButton label={label} value={value} onChange={onChecked} checked={list.includes(value)} key={i} />
               )
             })}
           </div>

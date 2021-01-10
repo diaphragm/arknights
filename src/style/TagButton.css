@@ -1,0 +1,8 @@
+.TagButton {
+  cursor: default;
+  user-select: none;
+}
+
+.TagButton.checked {
+  background-color: #1598DD;
+}

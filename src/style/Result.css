@@ -1,26 +1,30 @@
-.result {
+.Result {
   margin: 8px 0px;
   padding: 0px 8px;
   background-color: #E8E8E8;
 }
 
-.result.rarity6 {
+.Result.rarity6 {
   background-color: goldenrod;
 }
 
-.result.rarity5 {
+.Result.rarity5 {
   background-color: palegoldenrod;
 }
 
-.result.rarity4 {
+.Result.rarity4 {
   background-color: lightblue;
 }
 
-.result .note {
+.Result .note {
   color: #C65544
 }
 
-.result .character {
+.Result .character {
   display: inline-block;
   margin: auto 6px
+}
+
+.Result .tag {
+  box-shadow: none;
 }

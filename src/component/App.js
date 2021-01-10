@@ -24,13 +24,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <div id="container">
-        <Title />
-
-        <ButtonList checkedList={checkedTagList} onChange={(list => setCheckedTagList(list))} />
-
-        <Output result={result} />
-      </div>
+      <Title />
+      <ButtonList list={checkedTagList} onChange={(list => setCheckedTagList(list))} />
+      <Output result={result} />
     </div>
   )
 }

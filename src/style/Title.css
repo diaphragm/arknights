@@ -1,4 +1,4 @@
-.title {
+.Title {
   position: relative;
   padding: 15px;
   color: #313131;
@@ -11,7 +11,7 @@
   overflow-wrap: break-word;
 }
 
-.title:before {
+.Title:before {
   content: "";
   position: absolute;
   left: 0;
@@ -22,6 +22,6 @@
 }
 
 /* いい感じの区切りで文を改行するように */
-.title span {
+.Title span {
   display: inline-block;
 }
