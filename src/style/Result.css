@@ -4,23 +4,23 @@
   background-color: #E8E8E8;
 }
 
-.rarity6 {
+.result.rarity6 {
   background-color: goldenrod;
 }
 
-.rarity5 {
+.result.rarity5 {
   background-color: palegoldenrod;
 }
 
-.rarity4 {
+.result.rarity4 {
   background-color: lightblue;
 }
 
-.note {
+.result .note {
   color: #C65544
 }
 
-.character {
+.result .character {
   display: inline-block;
   margin: auto 6px
 }
