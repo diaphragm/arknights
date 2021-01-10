@@ -1,7 +1,7 @@
 import React from 'react'
 import '../style/Title.css'
 
-const Title = (props) => {
+const Title = () => {
   return (
     <div className="title"><span>アークナイツ</span> <span>公開求人検索</span></div>
   )

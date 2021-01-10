@@ -1,0 +1,122 @@
+[
+  [
+    {
+      "label": "先鋒タイプ",
+      "value": "PIONEER"
+    },
+    {
+      "label": "前衛タイプ",
+      "value": "WARRIOR"
+    },
+    {
+      "label": "狙撃タイプ",
+      "value": "SNIPER"
+    },
+    {
+      "label": "重装タイプ",
+      "value": "TANK"
+    },
+    {
+      "label": "医療タイプ",
+      "value": "MEDIC"
+    },
+    {
+      "label": "補助タイプ",
+      "value": "SUPPORT"
+    },
+    {
+      "label": "術士タイプ",
+      "value": "CASTER"
+    },
+    {
+      "label": "特殊タイプ",
+      "value": "SPECIAL"
+    }
+  ],
+  [
+    {
+      "label": "近距離",
+      "value": "MELEE"
+    },
+    {
+      "label": "遠距離",
+      "value": "RANGED"
+    }
+  ],
+  [
+    {
+      "label": "初期",
+      "value": "初期"
+    },
+    {
+      "label": "エリート",
+      "value": "SENIOR"
+    },
+    {
+      "label": "上級エリート",
+      "value": "TOP"
+    }
+  ],
+  [
+    {
+      "label": "治療",
+      "value": "治療"
+    },
+    {
+      "label": "支援",
+      "value": "支援"
+    },
+    {
+      "label": "火力",
+      "value": "火力"
+    },
+    {
+      "label": "範囲攻撃",
+      "value": "範囲攻撃"
+    },
+    {
+      "label": "減速",
+      "value": "減速"
+    },
+    {
+      "label": "生存",
+      "value": "生存"
+    },
+    {
+      "label": "防御",
+      "value": "防御"
+    },
+    {
+      "label": "弱化",
+      "value": "弱化"
+    },
+    {
+      "label": "強制移動",
+      "value": "強制移動"
+    },
+    {
+      "label": "牽制",
+      "value": "牽制"
+    },
+    {
+      "label": "爆発力",
+      "value": "爆発力"
+    },
+    {
+      "label": "召喚",
+      "value": "召喚"
+    },
+    {
+      "label": "高速再配置",
+      "value": "高速再配置"
+    },
+    {
+      "label": "COST回復",
+      "value": "COST回復"
+    },
+    {
+      "label": "ロボット",
+      "value": "ROBOT"
+    }
+  ]
+]
