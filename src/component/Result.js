@@ -9,16 +9,17 @@ const Result = ({tags, chars}) => {
   }
 
   const minRarity = Math.min(...chars.map(char => char.rarity))
+  const resultRrarity = Math.min(...chars.filter(char => char.rarity >= 3).map(char => char.rarity))
 
   return (
-    <div className={`Result rarity${minRarity}`}>
+    <div className={`Result rarity${resultRrarity}`}>
       <div className="tags">
         {tags.map((tag, j) => {
           const label = lookupButtonLabel(tag).label
           return <div className="tag" key={j}>{label}</div>
         })}
       </div>
-      {minRarity >= 4 && <div className="note">[★{minRarity}以上確定！]</div>}
+      {resultRrarity >= 4 && <div className="note">[{minRarity <= 3 && '07:40以上で'}★{resultRrarity}以上確定！]</div>}
       <div className="characters">
         {chars.map((char, j) => {
           return <div className="character" key={j}>★{char.rarity} {char.name}</div>
