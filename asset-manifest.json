@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/arknights/static/css/main.910b5e95.chunk.css",
-    "main.js": "/arknights/static/js/main.732f88f9.chunk.js",
-    "main.js.map": "/arknights/static/js/main.732f88f9.chunk.js.map",
+    "main.js": "/arknights/static/js/main.cd9c2d1d.chunk.js",
+    "main.js.map": "/arknights/static/js/main.cd9c2d1d.chunk.js.map",
     "runtime-main.js": "/arknights/static/js/runtime-main.abd9369f.js",
     "runtime-main.js.map": "/arknights/static/js/runtime-main.abd9369f.js.map",
     "static/js/2.aedc0218.chunk.js": "/arknights/static/js/2.aedc0218.chunk.js",
     "static/js/2.aedc0218.chunk.js.map": "/arknights/static/js/2.aedc0218.chunk.js.map",
     "index.html": "/arknights/index.html",
-    "precache-manifest.36872f45ff47ab570dfa7a34d7dcacc9.js": "/arknights/precache-manifest.36872f45ff47ab570dfa7a34d7dcacc9.js",
+    "precache-manifest.48d7cc6cba201fbf3c3ee62c7cd1605f.js": "/arknights/precache-manifest.48d7cc6cba201fbf3c3ee62c7cd1605f.js",
     "service-worker.js": "/arknights/service-worker.js",
     "static/css/main.910b5e95.chunk.css.map": "/arknights/static/css/main.910b5e95.chunk.css.map",
     "static/js/2.aedc0218.chunk.js.LICENSE.txt": "/arknights/static/js/2.aedc0218.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.abd9369f.js",
     "static/js/2.aedc0218.chunk.js",
     "static/css/main.910b5e95.chunk.css",
-    "static/js/main.732f88f9.chunk.js"
+    "static/js/main.cd9c2d1d.chunk.js"
   ]
 }

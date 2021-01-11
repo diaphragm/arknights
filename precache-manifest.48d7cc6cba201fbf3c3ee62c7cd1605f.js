@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "760fb382c4f951717c67a6c204ee4e6b",
+    "revision": "0dc0205ec47d73c66d404ca553863c1a",
     "url": "/arknights/index.html"
   },
   {
-    "revision": "94a97e76d0b622ffe8ac",
+    "revision": "9ad3f874e3cc791a9613",
     "url": "/arknights/static/css/main.910b5e95.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/arknights/static/js/2.aedc0218.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "94a97e76d0b622ffe8ac",
-    "url": "/arknights/static/js/main.732f88f9.chunk.js"
+    "revision": "9ad3f874e3cc791a9613",
+    "url": "/arknights/static/js/main.cd9c2d1d.chunk.js"
   },
   {
     "revision": "fb90f619e87939125d0c",
