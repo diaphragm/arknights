@@ -19,7 +19,7 @@ const Result = ({tags, chars}) => {
           return <div className="tag" key={j}>{label}</div>
         })}
       </div>
-      {resultRrarity >= 4 && <div className="note">[{minRarity <= 3 && '07:40以上で'}★{resultRrarity}以上確定！]</div>}
+      {resultRrarity >= 4 && <div className="note">[{minRarity <= 2 && '07:40以上で'}★{resultRrarity}以上確定！]</div>}
       <div className="characters">
         {chars.map((char, j) => {
           return <div className="character" key={j}>★{char.rarity} {char.name}</div>
