@@ -8,6 +8,7 @@ import { calculateAvailableCharacters } from 'lib/calculate'
 
 const App = () => {
   const [charData, setCharData] = React.useState([])
+  const [isCharDataLoaded, setIsCharDataLoaded] = React.useState(false)
   const [checkedTagList, setCheckedTagList] = React.useState([])
   const [result, setResult] = React.useState([])
 
@@ -15,6 +16,7 @@ const App = () => {
   React.useEffect(() => {
     (async () => {
       setCharData(await fetchCharData())
+      setIsCharDataLoaded(true)
     })()
   }, [])
 
@@ -25,8 +27,13 @@ const App = () => {
   return (
     <div className="App">
       <Title />
-      <ButtonList list={checkedTagList} onChange={(list => setCheckedTagList(list))} />
-      <Output result={result} />
+      {isCharDataLoaded
+        ? (<>
+          <ButtonList list={checkedTagList} onChange={(list => setCheckedTagList(list))} />
+          <Output result={result} />
+        </>)
+        : 'Loading...'
+      }
     </div>
   )
 }
