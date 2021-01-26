@@ -17,7 +17,8 @@ export const fetchCharData = async () => {
 
   const availableCharNameList = gachaTable.recruitDetail
     .replace(/<@rc\.eml>|<\/>/g, '')
-    .match(/(?<=★+\n).+(?=\n--------------------|$)/g)
+    .match(/★+\n.+(\n--------------------|$)/g)
+    .map(l => l.split('\n')[1])
     .map(l => l.split(' / '))
     .flat()
 
