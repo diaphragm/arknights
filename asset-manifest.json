@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/arknights/static/css/main.910b5e95.chunk.css",
-    "main.js": "/arknights/static/js/main.cd9c2d1d.chunk.js",
-    "main.js.map": "/arknights/static/js/main.cd9c2d1d.chunk.js.map",
-    "runtime-main.js": "/arknights/static/js/runtime-main.abd9369f.js",
-    "runtime-main.js.map": "/arknights/static/js/runtime-main.abd9369f.js.map",
-    "static/js/2.aedc0218.chunk.js": "/arknights/static/js/2.aedc0218.chunk.js",
-    "static/js/2.aedc0218.chunk.js.map": "/arknights/static/js/2.aedc0218.chunk.js.map",
+    "main.js": "/arknights/static/js/main.979ba677.chunk.js",
+    "main.js.map": "/arknights/static/js/main.979ba677.chunk.js.map",
+    "runtime-main.js": "/arknights/static/js/runtime-main.6231c6a2.js",
+    "runtime-main.js.map": "/arknights/static/js/runtime-main.6231c6a2.js.map",
+    "static/js/2.ca876139.chunk.js": "/arknights/static/js/2.ca876139.chunk.js",
+    "static/js/2.ca876139.chunk.js.map": "/arknights/static/js/2.ca876139.chunk.js.map",
     "index.html": "/arknights/index.html",
-    "precache-manifest.48d7cc6cba201fbf3c3ee62c7cd1605f.js": "/arknights/precache-manifest.48d7cc6cba201fbf3c3ee62c7cd1605f.js",
+    "precache-manifest.a07a6fc8a0e5230f870dd16e3399620b.js": "/arknights/precache-manifest.a07a6fc8a0e5230f870dd16e3399620b.js",
     "service-worker.js": "/arknights/service-worker.js",
     "static/css/main.910b5e95.chunk.css.map": "/arknights/static/css/main.910b5e95.chunk.css.map",
-    "static/js/2.aedc0218.chunk.js.LICENSE.txt": "/arknights/static/js/2.aedc0218.chunk.js.LICENSE.txt"
+    "static/js/2.ca876139.chunk.js.LICENSE.txt": "/arknights/static/js/2.ca876139.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.abd9369f.js",
-    "static/js/2.aedc0218.chunk.js",
+    "static/js/runtime-main.6231c6a2.js",
+    "static/js/2.ca876139.chunk.js",
     "static/css/main.910b5e95.chunk.css",
-    "static/js/main.cd9c2d1d.chunk.js"
+    "static/js/main.979ba677.chunk.js"
   ]
 }
