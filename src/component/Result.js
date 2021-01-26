@@ -9,7 +9,10 @@ const Result = ({tags, chars}) => {
   }
 
   const minRarity = Math.min(...chars.map(char => char.rarity))
-  const resultRrarity = Math.min(...chars.filter(char => char.rarity >= 3).map(char => char.rarity))
+  const rareChars = chars.filter(char => char.rarity >= 3)
+  const resultRrarity = rareChars.length > 0
+    ? Math.min(...rareChars.map(char => char.rarity))
+    : 0
 
   return (
     <div className={`Result rarity${resultRrarity}`}>
