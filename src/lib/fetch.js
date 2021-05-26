@@ -19,8 +19,9 @@ export const fetchCharData = async () => {
     .replace(/<@rc\.eml>|<\/>/g, '')
     .match(/★+\n.+(\n--------------------|$)/g)
     .map(l => l.split('\n')[1])
-    .map(l => l.split(' / '))
+    .map(l => l.split('/'))
     .flat()
+    .map(c => c.trim())
 
   console.log(availableCharNameList)
 
