@@ -1,5 +1,5 @@
-const CHARACTER_TABLE_URL = 'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/ja_JP/gamedata/excel/character_table.json'
-const GACHA_TABLE_URL = 'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData/master/ja_JP/gamedata/excel/gacha_table.json'
+const CHARACTER_TABLE_URL = 'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/master/ja_JP/gamedata/excel/character_table.json'
+const GACHA_TABLE_URL = 'https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/master/ja_JP/gamedata/excel/gacha_table.json'
 
 const fetchCharacterTable = async () => {
   return await (await fetch(CHARACTER_TABLE_URL)).json()
@@ -7,6 +7,11 @@ const fetchCharacterTable = async () => {
 
 const fetchGachaTable = async () => {
   return await (await fetch(GACHA_TABLE_URL)).json()
+}
+
+const fixCharRarity = (char) => {
+  const rarity = Number(char.rarity.replace("TIER_", ""))
+  return {...char, rarity}
 }
 
 export const fetchCharData = async () => {
@@ -27,13 +32,14 @@ export const fetchCharData = async () => {
 
   return Object.entries(characterTable)
     .filter(([, char]) => availableCharNameList.includes(char.name))
+    .map(([key, char]) => [key, fixCharRarity(char)])
     .map(([key, char]) => {
       const tags = char.tagList || []
       tags.push(char.position, char.profession)
-      if (char.rarity + 1 === 1) tags.push('ROBOT')
-      if (char.rarity + 1 === 5) tags.push('SENIOR')
-      if (char.rarity + 1 === 6) tags.push('TOP')
+      if (char.rarity === 1) tags.push('ROBOT')
+      if (char.rarity === 5) tags.push('SENIOR')
+      if (char.rarity === 6) tags.push('TOP')
 
-      return { key, name: char.name, rarity: char.rarity + 1, tags }
+      return { key, name: char.name, rarity: char.rarity, tags }
     })
 }
