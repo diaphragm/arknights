@@ -1,0 +1,9 @@
+services:
+  work:
+    image: node
+    working_dir: /work
+    volumes:
+      - .:/work
+    ports:
+      - 3000:3000
+    command: bash -c "npm run start"
