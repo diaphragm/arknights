@@ -31,7 +31,7 @@ export const fetchCharData = async () => {
   console.log(availableCharNameList)
 
   return Object.entries(characterTable)
-    .filter(([, char]) => availableCharNameList.includes(char.name))
+    .filter(([key, char]) => key.search('char_') === 0 && availableCharNameList.includes(char.name))
     .map(([key, char]) => [key, fixCharRarity(char)])
     .map(([key, char]) => {
       const tags = char.tagList || []

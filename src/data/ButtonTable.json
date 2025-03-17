@@ -49,6 +49,10 @@
       "value": "初期"
     },
     {
+      "label": "ロボット",
+      "value": "ROBOT"
+    },
+    {
       "label": "エリート",
       "value": "SENIOR"
     },
@@ -115,8 +119,8 @@
       "value": "COST回復"
     },
     {
-      "label": "ロボット",
-      "value": "ROBOT"
+      "label": "元素",
+      "value": "元素"
     }
   ]
 ]
